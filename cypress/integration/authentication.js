@@ -1,16 +1,35 @@
-import { mainPage } from '../support/pageObjects/mainPage'
-import { registerPage } from '../support/pageObjects/registerPage'
+import HomePage from '../support/pageObjects/HomePage'
 
-describe('My Store - Automation Practice', () => {
-	context('Authentications', () => {
-		beforeEach(() => {
-			cy.visit('/')
-			mainPage.verifyMainPage()
-		})
+describe('Sign In', () => {
+  it.only('should show an error message on empty input', () => {
+    const home = new HomePage();
+    home.visit();
 
-		it('Register with Valid Credentials', () => {
-			registerPage.goToRegisterPage()
-			registerPage.verifyRegisterPage()
-		})
-	})
-})
+    const signIn = home.goToSignIn();
+
+    signIn.submit();
+
+    signIn.getEmailError()
+      .should('exist')
+      .contains('Email is required');
+
+    signIn
+      .getPasswordError()
+      .should('exist')
+      .contains('Password is required');
+  });
+  
+  it('should sign in with correct credentials', () => {
+    const home = new HomePage();
+    home.visit();
+
+    const signIn = home.goToSignIn();
+
+    signIn
+      .fillEmail('john@doe.com')
+      .fillPassword('123456')
+      .submit();
+
+    home.getUserAvatar().should('exist');
+  });
+});
