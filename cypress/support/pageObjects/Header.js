@@ -1,7 +1,15 @@
 class Header {
-    getSignInLink() {
-      return cy.get(`[data-testid=SignInLink]`);
-    }
+
+  getSignInLink() {
+    cy.visit('/login')
+		return
   }
   
-  export default Header;
+  getRegisterLink() {
+    cy.visit('/register')
+		return
+  }
+  
+}
+
+export default Header;

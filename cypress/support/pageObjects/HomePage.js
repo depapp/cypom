@@ -1,26 +1,23 @@
-import Header from '../support/pageObjects/Headers'
-import SignInPage from '../support/pageObjects/SignIn'
+import Header from './Header'
+import SignInPage from './SignInPage'
 
 class HomePage {
   constructor() {
-    this.header = new Header();
+    this.header = new Header()
   }
-  
-  visit() {
-    cy.visit('/');
-  }
-  
-  getUserAvatar() {
-    return cy.get(`[data-testid=UserAvatar]`);
-  }
-  
-  goToSignIn() {
-    const link = this.header.getSignInLink();
-    link.click();
 
-    const signIn = new SignInPage();
-    return signIn;
+  goToRegister() {
+    this.header.getRegisterLink()
+  }
+
+  goToSignIn() {
+    this.header.getSignInLink()
+  }
+
+  signIn() {
+    const signIn = new SignInPage()
+    return signIn
   }
 }
 
-export default HomePage;
+export default HomePage

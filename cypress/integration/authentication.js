@@ -1,35 +1,19 @@
 import HomePage from '../support/pageObjects/HomePage'
 
+import Chance from 'chance'
+const chance = new Chance()
+
 describe('Sign In', () => {
-  it.only('should show an error message on empty input', () => {
-    const home = new HomePage();
-    home.visit();
-
-    const signIn = home.goToSignIn();
-
-    signIn.submit();
-
-    signIn.getEmailError()
-      .should('exist')
-      .contains('Email is required');
-
-    signIn
-      .getPasswordError()
-      .should('exist')
-      .contains('Password is required');
-  });
-  
   it('should sign in with correct credentials', () => {
-    const home = new HomePage();
-    home.visit();
+    
+    const home = new HomePage()
+    home.goToSignIn()
 
-    const signIn = home.goToSignIn();
-
+    const signIn = home.signIn()
     signIn
-      .fillEmail('john@doe.com')
-      .fillPassword('123456')
-      .submit();
+      .fillEmail(chance.email())
+      .fillEmail(chance.email())
+      .fillEmail(chance.email())
 
-    home.getUserAvatar().should('exist');
   });
 });
