@@ -12,8 +12,7 @@ describe('Sign In', () => {
     const signIn = home.signIn()
     signIn
       .fillEmail(chance.email())
-      .fillEmail(chance.email())
-      .fillEmail(chance.email())
-
-  });
-});
+      .fillPassword(chance.string())
+      .checkRememberMe()
+  })
+})

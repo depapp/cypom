@@ -19,6 +19,18 @@ class SignInPage {
 	  
 	  return this
 	}
+
+	fillPassword(value) {
+		const field = cy.get('.panel-body > :nth-child(2) > .form-control')
+		field.clear()
+		field.type(value)
+		
+		return this
+	  }
+
+	  checkRememberMe() {
+		cy.get('#remember-me').click()
+	  }
   
 	// fillPassword(value) {
 	//   const field = cy.get(`[data-testid=SignInPasswordField]`);
