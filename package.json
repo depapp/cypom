@@ -1,0 +1,19 @@
+{
+  "name": "cypom",
+  "version": "1.0.0",
+  "description": "automationpractice using Cypress with Page Object Model",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/depapp/cypom.git"
+  },
+  "author": "@depapp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/depapp/cypom/issues"
+  },
+  "homepage": "https://github.com/depapp/cypom#readme"
+}
