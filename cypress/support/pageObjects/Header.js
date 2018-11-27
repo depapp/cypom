@@ -1,15 +1,14 @@
 class Header {
 
-  getSignInLink() {
-    cy.visit('/login')
+	getRegisterLink() {
+		cy.visit('?controller=authentication&back=my-account')
 		return
-  }
-  
-  getRegisterLink() {
-    cy.visit('/register')
+	}
+	
+	getSignInLink() {
+		cy.visit('?controller=authentication&back=my-account')
 		return
-  }
-  
+	}
 }
 
 export default Header

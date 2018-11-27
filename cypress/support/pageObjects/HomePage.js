@@ -1,23 +1,29 @@
 import Header from './Header'
 import SignInPage from './SignInPage'
+import RegisterPage from './RegisterPage';
 
 class HomePage {
-  constructor() {
-    this.header = new Header()
-  }
+	constructor() {
+		this.header = new Header()
+	}
 
-  goToRegister() {
-    this.header.getRegisterLink()
-  }
+	goToRegister() {
+		this.header.getRegisterLink()
+	}
 
-  goToSignIn() {
-    this.header.getSignInLink()
-  }
+	goToSignIn() {
+		this.header.getSignInLink()
+	}
 
-  signIn() {
-    const signIn = new SignInPage()
-    return signIn
-  }
+	register() {
+		const register = new RegisterPage()
+		return register
+	}
+
+	signIn() {
+		const signIn = new SignInPage()
+		return signIn
+	}
 }
 
 export default HomePage
