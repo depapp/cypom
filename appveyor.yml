@@ -1,0 +1,26 @@
+version: 1.0.{build}
+install:
+- ps: >-
+    npm install --save-dev cypress
+
+    npm install --save-dev chance
+build: off
+test_script:
+- ps: node_modules\.bin\cypress run
+notifications:
+- provider: Email
+  to:
+  - depa.article@gmail.com
+  subject: 'Cypress with POM: Success'
+  message: 'Cypress with POM: Success'
+  on_build_success: true
+  on_build_failure: false
+  on_build_status_changed: false
+- provider: Email
+  to:
+  - depa.article@gmail.com
+  subject: 'Cypress with POM: Failed'
+  message: 'Cypress with POM: Failed'
+  on_build_success: false
+  on_build_failure: true
+  on_build_status_changed: false
