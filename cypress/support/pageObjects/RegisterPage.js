@@ -107,6 +107,18 @@ class RegisterPage {
         field.contains(value)
         return this
     }
+
+    verifyRegisterFailed(value) {
+        const field = cy.get('#create_account_error')
+        field.contains(value)
+        return this
+    }
+
+    verifyRegisterFailedEmptyFields(value) {
+        const field = cy.get('.alert')
+        field.contains(value)
+        return this
+    }
 }
 
 export default RegisterPage
