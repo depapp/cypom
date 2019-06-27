@@ -5,6 +5,7 @@ cypress/fixtures/example.json
 cypress/integration/examples/*
 cypress/videos/*
 cypress/screenshots/*
+cypress/integration/a.js
 
 ### VisualStudioCode ###
 .vscode/*
@@ -12,5 +13,7 @@ cypress/screenshots/*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+node_modules/*
 
 # End of https://www.gitignore.io/

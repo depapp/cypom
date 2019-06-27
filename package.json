@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/depapp/cypom/issues"
   },
-  "homepage": "https://github.com/depapp/cypom#readme"
+  "homepage": "https://github.com/depapp/cypom#readme",
+  "devDependencies": {
+    "chance": "^1.0.18"
+  }
 }
